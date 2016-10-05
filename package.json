@@ -1,31 +1,35 @@
 {
   "name": "electrode-jchip-app",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Electrode test app",
   "homepage": "",
   "author": {
     "name": "Joel Chen",
     "email": "xchen@walmartlabs.com",
-    "url": ""
+    "url": "https://github.com/jchip"
   },
   "contributors": [],
   "files": [
-    "lib"
+    "server",
+    "client",
+    "test"
   ],
-  "main": "lib/index.js",
+  "main": "server/index.js",
   "keywords": [],
   "repository": {
     "type": "git",
-    "url": "jchip/electrode-jchip-app"
+    "url": "git@github.com:jchip/electrode-jchip-app.git"
   },
   "license": "Apache-2.0",
   "engines": {
-    "node": "6.x.x"
+    "node": ">= 4.2.x",
+    "npm": ">= 3.x.x"
   },
   "scripts": {
-    "start": "node server/index.js",
+    "start": "if [ \"$NODE_ENV\" == \"production\" ]; then npm run prod; else gulp dev; fi",
     "test": "gulp test",
     "coverage": "gulp check",
+    "prod": "echo 'Starting standalone server in PROD mode'; node .",
     "heroku-postbuild": "gulp build"
   },
   "dependencies": {
