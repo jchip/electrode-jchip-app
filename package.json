@@ -23,9 +23,10 @@
     "node": "6.x.x"
   },
   "scripts": {
-    "start": "gulp dev",
+    "start": "node server/index.js",
     "test": "gulp test",
-    "coverage": "gulp check"
+    "coverage": "gulp check",
+    "heroku-postbuild": "gulp build"
   },
   "dependencies": {
     "bluebird": "^3.4.6",
